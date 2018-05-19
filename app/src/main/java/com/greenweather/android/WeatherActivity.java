@@ -48,17 +48,25 @@ public class WeatherActivity extends AppCompatActivity {
     //同步中文字显示
     private Context context;
 
-    private Button navButton;
-
+   // private Button navButton;
+    //顶部城市名
     private TextView titleCity;
+    //数据更新时间显示
     private TextView titleUpdateTime;
+    //今天温度
     private TextView degreeText;
+    //天气信息
     private TextView weatherInfoText;
     private LinearLayout forecastLayout;
+    //湿度质量
     private TextView aqiText;
+    //空气质量
     private TextView pm25Text;
+    //提示建议
     private TextView comfortText;
+    //洗车建议
     private TextView carWashText;
+    //运动建议
     private TextView sportText;
 
     private ImageView bingPicImg;
@@ -70,7 +78,7 @@ public class WeatherActivity extends AppCompatActivity {
     //右上角菜单控件
     private ImageView menuImageView;
     //popupMenu菜单item
-    private TextView changeCityTv, updateWeather, shareWeatherTv, settingTv,network;
+    private TextView changeCityTv, shareWeatherTv, settingTv,network;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,7 +127,7 @@ public class WeatherActivity extends AppCompatActivity {
         swipeRefresh = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
         swipeRefresh.setColorSchemeResources(R.color.colorPrimary);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        navButton = (Button) findViewById(R.id.nav_button);
+      //  navButton = (Button) findViewById(R.id.nav_button);
         context=this;
 
         //缓存
@@ -144,12 +152,12 @@ public class WeatherActivity extends AppCompatActivity {
             }
         });
 
-        navButton.setOnClickListener(new View.OnClickListener() {
+      /*  navButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 drawerLayout.openDrawer(GravityCompat.START);
             }
-        });
+        });*/
         //背景图片
         String bingPic = prefs.getString("bing_pic", null);
         if (bingPic != null) {
@@ -163,6 +171,7 @@ public class WeatherActivity extends AppCompatActivity {
      * 根据天气id请求城市天气信息。
      */
     public void requestWeather(final String weatherId) {
+        //注册并获取和风天气key
         String weatherUrl = "http://guolin.tech/api/weather?cityid=" + weatherId + "&key=fb0e22d7b17f4bd0947c2e0c0045093d";
         HttpUtil.sendOkHttpRequest(weatherUrl, new Callback() {
             @Override
@@ -257,9 +266,9 @@ public class WeatherActivity extends AppCompatActivity {
             aqiText.setText(weather.aqi.city.aqi);
             pm25Text.setText(weather.aqi.city.pm25);
         }
-        String comfort = "舒适度：" + weather.suggestion.comfort.info;
-        String carWash = "洗车指数：" + weather.suggestion.carWash.info;
-        String sport = "运行建议：" + weather.suggestion.sport.info;
+        String comfort = "舒适度分析：" + weather.suggestion.comfort.info;
+        String carWash = "洗车建议：" + weather.suggestion.carWash.info;
+        String sport = "运动建议：" + weather.suggestion.sport.info;
         comfortText.setText(comfort);
         carWashText.setText(carWash);
         sportText.setText(sport);
@@ -271,11 +280,18 @@ public class WeatherActivity extends AppCompatActivity {
      * 为弹出菜单设置item点击事件
      */
     private void setPopupMenuClick(){
+        //关闭目录按键
         ImageView closeMenu = (ImageView) popupMenuView.findViewById(R.id.close_menu);
+        //切换城市
         changeCityTv = (TextView) popupMenuView.findViewById(R.id.change_city);
+        //分享功能
         shareWeatherTv = (TextView) popupMenuView.findViewById(R.id.share_weather);
+        //关于作者
         settingTv = (TextView) popupMenuView.findViewById(R.id.setting);
+        //访问天气网
         network=(TextView)popupMenuView.findViewById(R.id.network) ;
+
+        //下面是一系列按钮监听实现
         closeMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -311,6 +327,8 @@ public class WeatherActivity extends AppCompatActivity {
         settingTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent =new Intent(WeatherActivity.this,about_me.class);
+                startActivity(intent);
             }
         });
     }

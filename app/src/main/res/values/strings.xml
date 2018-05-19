@@ -11,4 +11,5 @@
     <string name="update_weather">更新天气</string>
     <string name="str_pull_down_to_refresh">下拉可以刷新</string>
     <string name="network">气象网站</string>
+    <string name="aboutauthor">关于</string>
 </resources>

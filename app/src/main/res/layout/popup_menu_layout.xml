@@ -52,6 +52,6 @@
         android:paddingLeft="20dp"
         android:textSize="15sp"
         android:clickable="true"
-        android:text="@string/setting"/>
+        android:text="@string/aboutauthor"/>
 
 </LinearLayout>
