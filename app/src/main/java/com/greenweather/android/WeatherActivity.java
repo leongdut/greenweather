@@ -70,7 +70,7 @@ public class WeatherActivity extends AppCompatActivity {
     //右上角菜单控件
     private ImageView menuImageView;
     //popupMenu菜单item
-    private TextView changeCityTv, updateWeather, shareWeatherTv, settingTv;
+    private TextView changeCityTv, updateWeather, shareWeatherTv, settingTv,network;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -275,6 +275,7 @@ public class WeatherActivity extends AppCompatActivity {
         changeCityTv = (TextView) popupMenuView.findViewById(R.id.change_city);
         shareWeatherTv = (TextView) popupMenuView.findViewById(R.id.share_weather);
         settingTv = (TextView) popupMenuView.findViewById(R.id.setting);
+        network=(TextView)popupMenuView.findViewById(R.id.network) ;
         closeMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -296,6 +297,15 @@ public class WeatherActivity extends AppCompatActivity {
                     popupMenu.dismiss();
                 }
                 ShareUtil.showShare(context);
+            }
+        });
+        network.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 添加点击响应事件
+                Intent intent =new Intent(WeatherActivity.this,WebView1.class);
+                //启动
+                startActivity(intent);
             }
         });
         settingTv.setOnClickListener(new View.OnClickListener() {

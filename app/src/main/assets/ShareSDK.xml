@@ -32,43 +32,25 @@
 			搜狐微博        http://open.t.sohu.com
 			网易微博        http://open.t.163.com
 			豆瓣           http://developers.douban.com
-			
-			有道云笔记      http://note.youdao.com/open/developguide.html#app
-			印象笔记        https://dev.evernote.com/
-			Linkedin       https://developer.linkedin.com
-			FourSquare     https://developer.foursquare.com/
-			搜狐随身看      https://open.sohu.com/
-			Flickr         http://www.flickr.com/services/
-			Pinterest      http://developers.pinterest.com/
-			Tumblr         http://www.tumblr.com/developers
-			Dropbox        https://www.dropbox.com/developers
-			Instagram      http://instagram.com/developer#
-			VKontakte      http://vk.com/dev
-			易信好友        http://open.yixin.im/
-			明道	           http://open.mingdao.com/
-			Line           http://media.line.me/zh-hant/
-			Pocket         http://getpocket.com/developer/apps/new
-			KakaoTalk      https://developers.kakao.com/
-			KakaoStory     https://developers.kakao.com/
-			Plurk          http://www.plurk.com/API
+
     -->
     
     <ShareSDK 
-        AppKey = "19305ea3422ee"/> <!-- 修改成你在sharesdk后台注册的应用的appkey"-->
+        AppKey = "025e31a09486d"/> <!-- 修改成你在sharesdk后台注册的应用的appkey"-->
     
     <!-- ShareByAppClient标识是否使用微博客户端分享，默认是false -->
 	<QQ
 		Id="7"
 		SortId="7"
-		AppId="100371282"
-		AppKey="aed9b0303e3ed1e27bae87c33761161d"
+		AppId="1106842573"
+		AppKey="jz7K5NR5vyZflT0p"
 		ShareByAppClient="true"
 		Enable="true" />
 	<SinaWeibo
         Id="1"
         SortId="1"
-        AppKey="568898243"
-        AppSecret="38a4f8204cc784f81f9f0daaf31e02e3"
+        AppKey="796722561"
+        AppSecret="cf23eca7f5e1fec553498e2d41c6f117"
         RedirectUrl="http://www.sharesdk.cn"
         ShareByAppClient="true"
         Enable="true" />
