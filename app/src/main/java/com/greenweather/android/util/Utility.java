@@ -28,6 +28,7 @@ public class Utility {
         }
         return null;
     }
+
     /**
      * 对服务器通过httpUtil传入的回调县级数据，进行解析处理
      */
@@ -50,6 +51,7 @@ public class Utility {
         }
         return false;
     }
+
     /**
      * 对服务器通过httpUtil传入的回调市级数据，进行解析处理
      */
@@ -72,6 +74,7 @@ public class Utility {
         }
         return false;
     }
+
     /*
      *对服务器通过httpUtil传入的回调省级数据，进行解析处理
      */

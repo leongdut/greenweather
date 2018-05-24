@@ -68,7 +68,7 @@ public class WeatherActivity extends AppCompatActivity {
     private TextView carWashText;
     //运动建议
     private TextView sportText;
-
+    //背景 图片
     private ImageView bingPicImg;
     private String mWeatherId;
 
@@ -172,7 +172,7 @@ public class WeatherActivity extends AppCompatActivity {
      */
     public void requestWeather(final String weatherId) {
         //注册并获取和风天气key
-        String weatherUrl = "http://guolin.tech/api/weather?cityid=" + weatherId + "&key=fb0e22d7b17f4bd0947c2e0c0045093d";
+        String weatherUrl = "http://guolin.tech/api/weather?cityid=" + weatherId + "&key=c3dcdd6b5d69481183f5700b5f0a0fdd";
         HttpUtil.sendOkHttpRequest(weatherUrl, new Callback() {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
@@ -211,7 +211,7 @@ public class WeatherActivity extends AppCompatActivity {
     }
 
     /**
-     * 加载必应图
+     * 加载背景图片
      */
     private void loadBingPic() {
         String requestBingPic = "http://guolin.tech/api/bing_pic";
